@@ -1,0 +1,182 @@
+/* Demo
+-------------------------------------------------- */
+.demo-section {
+  /*height: 100%;*/
+  min-height: 100%;
+  height: auto;
+  padding-top: 100px;
+  padding-bottom: 90px;
+  text-align: center;
+  background: #ddd;
+}
+
+.demo-section .title {
+  text-transform: uppercase;
+  font-weight:bold;
+  color: black;
+  font-size: 3.25em;
+	letter-spacing: 2px;
+	line-height: 1.25em;
+  text-decoration: none;
+  /*font-family: 'Open Sans', sans-serif;*/
+  font-family: 'Orbitron', sans-serif;
+}
+
+
+/* Image
+==================================================================== */
+.image {
+  position: relative;
+  display: inline-block;
+  border: 0;
+  outline: 0;
+}
+
+.image img {
+  display: block;
+  width: 100%;
+}
+
+
+/* Gallery
+==================================================================== */
+.gallery {
+  position: relative;
+  width: auto;
+  overflow: hidden;
+  padding: 2em 0 4em 0;
+  margin-bottom: 0;
+  /*white-space: nowrap;*/
+}
+
+.gallery .reel {
+  white-space: nowrap;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 2em 0 2em;
+}
+
+.gallery .reel .item {
+  display: inline-table;
+  /*display: table-cell;*/
+  width: 20em;
+  /*height: 25em;*/
+  background: #fff;
+  text-align: center;
+  padding: 0 1em 1em 1em;
+  margin: 0 2em 0 0;
+  white-space: normal;
+  opacity: 1.0;
+  -moz-transition: opacity 0.75s ease-in-out;
+  -webkit-transition: opacity 0.75s ease-in-out;
+  -ms-transition: opacity 0.75s ease-in-out;
+  transition: opacity 0.75s ease-in-out;
+}
+
+.gallery .reel .item h2 {
+  position: relative;
+  height:60px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.gallery .reel .item p {
+  font-size: 15px;
+  height:40px;
+}
+
+.gallery .reel .item.loading {
+  opacity: 0;
+}
+
+/* Image in gallery
+-------------------------------------------------- */
+.gallery .reel .item .image {
+  position: relative;
+  left: -1em;
+  top: 0;
+  width: auto;
+  margin-right: -2em;
+  margin-bottom: 0em;
+}
+
+.gallery .reel .item .image img {
+  height:230px;
+  width:100%;
+}
+
+
+/* forward, backward controllr in gallery
+-------------------------------------------------- */
+.gallery .forward,
+.gallery .backward {
+  position: absolute;
+  top: 50%;
+  width: 6em;
+  height: 12em;
+  margin-top: -6em;
+  cursor: pointer;
+}
+
+.gallery .forward:before,
+.gallery .backward:before {
+  content: '';
+  display: block;
+  width: 6em;
+  height: 6em;
+  border-radius: 100%;
+  background-color: rgba(72, 57, 73, 0.5);
+  position: absolute;
+  top: 50%;
+  margin-top: -3em;
+  -moz-transition: background-color 0.35s ease-in-out;
+  -webkit-transition: background-color 0.35s ease-in-out;
+  -o-transition: background-color 0.35s ease-in-out;
+  -ms-transition: background-color 0.35s ease-in-out;
+  transition: background-color 0.35s ease-in-out;
+  -webkit-backface-visibility: hidden;
+}
+
+.gallery .forward:after,
+.gallery .backward:after {
+  content: '';
+  width: 3em;
+  height: 3em;
+  position: absolute;
+  top: 50%;
+  margin: -1.5em 0 0 0;
+  background: url("../images/arrow.svg") no-repeat center center;
+}
+
+.gallery .forward:hover:before,
+.gallery .backward:hover:before {
+  background-color: rgba(239, 131, 118, 0.75);
+}
+
+.gallery .forward {
+  right: 0;
+}
+
+.gallery .forward:before {
+  right: -3em;
+}
+
+.gallery .forward:after {
+  right: -0.25em;
+}
+
+.gallery .backward {
+  left: 0;
+}
+
+.gallery .backward:before {
+  left: -3em;
+}
+
+.gallery .backward:after {
+  left: -0.25em;
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
